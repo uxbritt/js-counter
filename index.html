@@ -7,11 +7,20 @@
 
   <body>
     <div id="app">
-      <!-- <label for="numb">Input the number you would like to multiply by:</label> -->
-      <input type="number" name="numb" id="numb" placeholder="">
-      <button class='inc'>+</button>
-      <h1 class='display'>0</h1>
-      <button class='sub'>-</button>
+      <div class="wrapper">
+
+        <fieldset class="center">
+          <label for="numb" class="">Count By</label>
+          <input type="number" name="numb" id="numb">
+        </fieldset>
+
+        <div class="counter center">
+          <button class='sub inline'>-</button>
+          <p class='display inline'>0</p>
+          <button class='inc inline'>+</button>
+        </div>
+
+      </div>
     </div>
     <script src="index.js"></script>
     <script>

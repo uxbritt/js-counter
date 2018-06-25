@@ -1,3 +1,49 @@
-h1, h2 {
+* {
+  box-sizing: border-box;
   font-family: Lato;
 }
+
+.wrapper {
+  width: 150px;
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid lightgray;
+}
+
+fieldset {
+  border: none;
+  width: 115px;
+}
+
+.counter {
+  width: 70px;
+}
+
+input {
+  width: 20px;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  outline: none;
+}
+
+input:focus {
+  outline:none;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
