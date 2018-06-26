@@ -1,7 +1,7 @@
 
 
 const App = {
-  bgColor: "red",
+  pics: ['pic1', 'pic2', 'pic3'],
   init(){
     this.cacheDom();
     this.bindEventListeners();
@@ -14,39 +14,11 @@ const App = {
     this.display = document.querySelector('.display');
   },
   bindEventListeners(){
-    this.leftBtn.addEventListener('click', this.changeLeftBgColor.bind(this));
-    this.rightBtn.addEventListener('click', this.changeRightBgColor.bind(this));
+    this.picThumb.addEventListener('click', this.changeFullPic.bind(this));
   },
-  changeLeftBgColor(){
-    console.log(this.bgColor);
-    if (this.bgColor === "red"){
-      this.bgColor = "blue";
-      this.render();
-    } else if (this.bgColor === "blue"){
-      this.bgColor = "green";
-      this.render()
-    } else if (this.bgColor === "green"){
-      this.bgColor = "red";
-      this.render()
-    } else {
-      console.log('not a color');
-    }
-  },
-  changeRightBgColor(){
-    console.log(this.bgColor);
-    if (this.bgColor === "red"){
-      this.bgColor = "green";
-      this.render();
-    } else if (this.bgColor === "green"){
-      this.bgColor = "blue";
-      this.render()
-    } else if (this.bgColor === "blue"){
-      this.bgColor = "red";
-      this.render()
-    } else {
-      console.log('not a color');
-    }
-  },
+ for ( function(pics){
+
+  });
   render(){
     this.display.style.backgroundColor = this.bgColor;
   }
@@ -54,3 +26,6 @@ const App = {
 
 App.init();
 window.App = App;
+
+
+  
