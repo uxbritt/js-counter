@@ -14,19 +14,34 @@ const App = {
     this.display = document.querySelector('.display');
   },
   bindEventListeners(){
-    this.leftBtn.addEventListener('click', this.changeBgColor.bind(this));
-    this.rightBtn.addEventListener('click', this.changeBgColor.bind(this));
+    this.leftBtn.addEventListener('click', this.changeLeftBgColor.bind(this));
+    this.rightBtn.addEventListener('click', this.changeRightBgColor.bind(this));
   },
-  changeBgColor(){
+  changeLeftBgColor(){
     console.log(this.bgColor);
     if (this.bgColor === "red"){
       this.bgColor = "blue";
       this.render();
     } else if (this.bgColor === "blue"){
-      this.bgColor = "red";
+      this.bgColor = "green";
       this.render()
     } else if (this.bgColor === "green"){
+      this.bgColor = "red";
+      this.render()
+    } else {
+      console.log('not a color');
+    }
+  },
+  changeRightBgColor(){
+    console.log(this.bgColor);
+    if (this.bgColor === "red"){
+      this.bgColor = "green";
+      this.render();
+    } else if (this.bgColor === "green"){
       this.bgColor = "blue";
+      this.render()
+    } else if (this.bgColor === "blue"){
+      this.bgColor = "red";
       this.render()
     } else {
       console.log('not a color');
@@ -39,4 +54,3 @@ const App = {
 
 App.init();
 window.App = App;
-
