@@ -1,8 +1,7 @@
 
 
 const App = {
-  amount: 1,
-  count: 0,
+  bgColor: "red",
   init(){
     this.cacheDom();
     this.bindEventListeners();
@@ -10,36 +9,48 @@ const App = {
   },
   cacheDom(){
     this.root = document.querySelector('#app');
-    this.addBtn = document.querySelector('.inc');
-    this.minusBtn = document.querySelector('.sub');
+    this.leftBtn = document.querySelector('.left');
+    this.rightBtn = document.querySelector('.right');
     this.display = document.querySelector('.display');
-    this.numbInput = document.querySelector('#numb');
   },
   bindEventListeners(){
-    this.numbInput.addEventListener('input', this.changeAmount.bind(this));
-    this.addBtn.addEventListener('click', this.addToCount.bind(this));
-    this.minusBtn.addEventListener('click', this.subFromCount.bind(this));
+    this.leftBtn.addEventListener('click', this.changeLeftBgColor.bind(this));
+    this.rightBtn.addEventListener('click', this.changeRightBgColor.bind(this));
   },
-  changeAmount(){
-    console.log(this.numbInput.value);
-    this.amount = parseInt(this.numbInput.value);
-    console.log(this.amount);
+  changeLeftBgColor(){
+    console.log(this.bgColor);
+    if (this.bgColor === "red"){
+      this.bgColor = "blue";
+      this.render();
+    } else if (this.bgColor === "blue"){
+      this.bgColor = "green";
+      this.render()
+    } else if (this.bgColor === "green"){
+      this.bgColor = "red";
+      this.render()
+    } else {
+      console.log('not a color');
+    }
   },
-  addToCount(){
-    this.count += this.amount;
-    this.render();
-  },
-  subFromCount(){
-    this.count -= this.amount;
-    this.render();
+  changeRightBgColor(){
+    console.log(this.bgColor);
+    if (this.bgColor === "red"){
+      this.bgColor = "green";
+      this.render();
+    } else if (this.bgColor === "green"){
+      this.bgColor = "blue";
+      this.render()
+    } else if (this.bgColor === "blue"){
+      this.bgColor = "red";
+      this.render()
+    } else {
+      console.log('not a color');
+    }
   },
   render(){
-    this.display.textContent = this.count;
-    this.numbInput.value = this.amount;
-    // console.log(this);
+    this.display.style.backgroundColor = this.bgColor;
   }
 }
 
 App.init();
 window.App = App;
-

@@ -1,4 +1,4 @@
-* {
+*, html {
   box-sizing: border-box;
   font-family: Lato;
 }
@@ -44,6 +44,15 @@ input:focus {
 .center {
   margin-left: auto;
   margin-right: auto;
+}
+
+.display {
+ width: 50px;
+ height: 20px;
+}
+
+.bgcolor{
+  background-color: red;
 }
 
 
